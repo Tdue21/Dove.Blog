@@ -21,7 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Posts", "Posts", "{F24BD98A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{C8C81AB6-FC70-4604-8D77-B17E982E5F5C}"
 	ProjectSection(SolutionItems) = preProject
-		..\Data\Images\Basic_Box.png = ..\Data\Images\Basic_Box.png
+		..\Data\Images\Basic_Box.webp = ..\Data\Images\Basic_Box.webp
+		..\Data\Images\C64.webp = ..\Data\Images\C64.webp
 	EndProjectSection
 EndProject
 Global
