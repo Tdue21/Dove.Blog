@@ -1,8 +1,18 @@
 Hello, my name is Thomas Due, and I am a software developer, gamer, roleplayer and dad. 
 
+## This Website 
+
+This is my personal website, built from scratch with asp.net core razor. It is primarily 
+intended to be used as a blog, but will serve as a show-case of, well, me.
+
+
 ## Software Development
-Since my first computer, a Commodore 64, back in the mid-1980s, 
-I have had an interest for software development. In the beginning it was whatever code I could find in
+Since my first computer, a Commodore 64, back in the mid-1980s, I have had an interest for 
+software development. 
+
+![Commodore 64](../Images/C64.webp).
+
+In the beginning it was whatever code I could find in
 a magazine that had to be typed in by hand. But slowly that shifted to my own projects. 
 
 This culminated with an assembler I painstakenly typed in from an english C64 magazine. By the time high-school
@@ -23,15 +33,18 @@ My primary genres are strategy games, roleplaying games, sandbox survival games 
 particularly get a kick from first-person shooters, probably because I suck at it ;)
 
 ## Roleplaying Games
-Table-top to be exact. I started with the famous Dungeons & Dragons Red Box. 
 
-![D&D Basic Set](../Images/Basic_Box.png).
+Table-top roleplaying games to be exact. I started with the famous Dungeons & Dragons Red Box, back 
+around 1989 or so, when a friend in high-school got it for a christmas present I think it was. 
 
+![D&D Basic Set](../Images/Basic_Box.webp).
 
-<p>I am Thomas Due, I have been developing software since my first Commodore 64, almost 40 years ago.</p>
-<p>These days, I am using .net and c#. </p>
+Since then I have played every version of Dungeons & Dragon, except 4th edition. 
+In addition I have played a host of other games, from Shadowrun to World of Darkness. 
 
-<p>This is my personal website, built from scratch with asp.net core razor. It is primarily intended 
-    to be used as a blog, but will serve as a show-case of, well, me.</p>
+## Family
 
+I have been married since 2000, with the same woman, mind you, and have 2 sons. 
+One is at the time of writing 24 and the other 16. 
+Both are die-hard gamers and also roleplayers, whaddaya know ;)
 
