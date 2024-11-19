@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35431.28
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorApp", "RazorApp\RazorApp.csproj", "{F7DBC4E9-20F0-4C8B-94D8-D79C07D01385}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dove.Blog.Data", "Dove.Blog.Data\Dove.Blog.Data.csproj", "{A35666B1-C257-4289-815F-BDE618F27E51}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{A7AA4790-CB71-4A32-8756-B65A9DC26CA2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pages", "Pages", "{8A755326-5C51-4D4F-94AA-0D63BEA2937D}"
+	ProjectSection(SolutionItems) = preProject
+		..\Data\Pages\About.md = ..\Data\Pages\About.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Posts", "Posts", "{F24BD98A-5119-4FE0-9789-2E78A108CA24}"
+	ProjectSection(SolutionItems) = preProject
+		..\Data\Pages\About.md = ..\Data\Pages\About.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{C8C81AB6-FC70-4604-8D77-B17E982E5F5C}"
+	ProjectSection(SolutionItems) = preProject
+		..\Data\Images\Basic_Box.png = ..\Data\Images\Basic_Box.png
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F7DBC4E9-20F0-4C8B-94D8-D79C07D01385}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7DBC4E9-20F0-4C8B-94D8-D79C07D01385}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7DBC4E9-20F0-4C8B-94D8-D79C07D01385}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7DBC4E9-20F0-4C8B-94D8-D79C07D01385}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A35666B1-C257-4289-815F-BDE618F27E51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A35666B1-C257-4289-815F-BDE618F27E51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A35666B1-C257-4289-815F-BDE618F27E51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A35666B1-C257-4289-815F-BDE618F27E51}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8A755326-5C51-4D4F-94AA-0D63BEA2937D} = {A7AA4790-CB71-4A32-8756-B65A9DC26CA2}
+		{F24BD98A-5119-4FE0-9789-2E78A108CA24} = {A7AA4790-CB71-4A32-8756-B65A9DC26CA2}
+		{C8C81AB6-FC70-4604-8D77-B17E982E5F5C} = {A7AA4790-CB71-4A32-8756-B65A9DC26CA2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4DD67E5F-B287-47EE-B188-C4BE60832386}
+	EndGlobalSection
+EndGlobal
