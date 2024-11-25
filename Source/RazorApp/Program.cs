@@ -1,7 +1,16 @@
+using Microsoft.Extensions.Options;
+using Microsoft.Extensions.DependencyInjection;
+using Westwind.AspNetCore.Markdown;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages();
+builder.Services.AddRazorPages(options => 
+    {
+        options.Conventions.AddPageRoute("/Pages", "Pages/{pageName}");
+    });
+
+builder.Services.AddMarkdown();
 
 var app = builder.Build();
 
@@ -15,6 +24,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseMarkdown();
 
 app.UseRouting();
 

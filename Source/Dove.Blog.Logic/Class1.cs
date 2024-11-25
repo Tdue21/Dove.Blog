@@ -1,4 +1,4 @@
-﻿namespace Dove.Blog.Data
+﻿namespace Dove.Blog.Logic
 {
     public class Class1
     {

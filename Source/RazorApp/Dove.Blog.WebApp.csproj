@@ -10,4 +10,9 @@
     <PackageReference Include="Westwind.AspNetCore.Markdown" Version="3.21.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Dove.Blog.Abstractions\Dove.Blog.Abstractions.csproj" />
+    <ProjectReference Include="..\Dove.Blog.Data\Dove.Blog.Data.csproj" />
+  </ItemGroup>
+
 </Project>

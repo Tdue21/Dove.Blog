@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace RazorApp.Pages;
+namespace Dove.Blog.WebApp.Pages;
 
 public class IndexModel : PageModel
 {
