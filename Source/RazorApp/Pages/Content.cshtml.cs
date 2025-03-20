@@ -7,9 +7,8 @@ namespace Dove.Blog.WebApp.Pages
 {
     public class ContentModel : PageModel
     {
-
         public string? PageName { get; set;}
-        public string PageContent { get; private set; }
+        public string? PageContent { get; private set; }
 
         public async Task OnGet()
         {
@@ -20,6 +19,9 @@ namespace Dove.Blog.WebApp.Pages
             ViewData["Title"] = pageName;
             PageName = pageName?.ToString();
             Console.WriteLine(pageName);
+
+
+            
         }
     }
 }

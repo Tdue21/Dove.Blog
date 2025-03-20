@@ -1,24 +1,7 @@
 <Solution>
-  <Folder Name="/Data/">
-    <File Path="pages.json" />
-  </Folder>
-  <Folder Name="/Data/Images/">
-    <File Path="../Data/Images/Basic_Box.webp" />
-    <File Path="../Data/Images/C64.webp" />
-  </Folder>
-  <Folder Name="/Data/Pages/">
-    <File Path="../Data/Pages/About.md" />
-    <File Path="../Data/Pages/Index.md" />
-    <File Path="../Data/Pages/Resume.md" />
-  </Folder>
-  <Folder Name="/Data/Posts/" />
   <Project Path="Dove.Blog.Abstractions/Dove.Blog.Abstractions.csproj" />
   <Project Path="Dove.Blog.Data/Dove.Blog.Data.csproj" />
   <Project Path="Dove.Blog.Logic/Dove.Blog.Logic.csproj" />
+  <Project Path="Dove.Blog.Tests/Dove.Blog.Tests.csproj" Id="01a5c447-5567-4f52-9ba6-3da4908ae3d3" />
   <Project Path="RazorApp/Dove.Blog.WebApp.csproj" />
-  <Project Path="VueTestAspNet/vuetestaspnet.client/vuetestaspnet.client.esproj">
-    <Build />
-    <Deploy />
-  </Project>
-  <Project Path="VueTestAspNet/VueTestAspNet.Server/VueTestAspNet.Server.csproj" />
 </Solution>

@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 # Define the .NET version to use
-ARG DOTNET_VERSION=8.0
+ARG DOTNET_VERSION=9.0
 
 # Base image for runtime
 FROM mcr.microsoft.com/dotnet/aspnet:${DOTNET_VERSION}-bookworm-slim AS base
