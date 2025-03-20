@@ -15,12 +15,14 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pages", "Pages", "{8A755326-5C51-4D4F-94AA-0D63BEA2937D}"
 	ProjectSection(SolutionItems) = preProject
 		..\Data\Pages\About.md = ..\Data\Pages\About.md
+		..\Data\Pages\Index.md = ..\Data\Pages\Index.md
 		..\Data\Pages\Resume.md = ..\Data\Pages\Resume.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Posts", "Posts", "{F24BD98A-5119-4FE0-9789-2E78A108CA24}"
 	ProjectSection(SolutionItems) = preProject
-		..\Data\Pages\About.md = ..\Data\Pages\About.md
+		..\Data\Posts\first-post.md = ..\Data\Posts\first-post.md
+		..\Data\Posts\the-blog-project.md = ..\Data\Posts\the-blog-project.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{C8C81AB6-FC70-4604-8D77-B17E982E5F5C}"
@@ -29,9 +31,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{C8C81A
 		..\Data\Images\C64.webp = ..\Data\Images\C64.webp
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dove.Blog.Abstractions", "Dove.Blog.Abstractions\Dove.Blog.Abstractions.csproj", "{3B1B1DBB-DE6B-444C-A207-F1387B45FD91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dove.Blog.Abstractions", "Dove.Blog.Abstractions\Dove.Blog.Abstractions.csproj", "{3B1B1DBB-DE6B-444C-A207-F1387B45FD91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dove.Blog.Logic", "Dove.Blog.Logic\Dove.Blog.Logic.csproj", "{6265B9F2-CE97-4FA7-99DA-54F101A39018}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dove.Blog.Logic", "Dove.Blog.Logic\Dove.Blog.Logic.csproj", "{6265B9F2-CE97-4FA7-99DA-54F101A39018}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

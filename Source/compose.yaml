@@ -1,0 +1,21 @@
+services:
+  razorapp:
+    build:
+      context: ./RazorApp
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    restart: unless-stopped
+    init: true
+    depends_on:
+      - database
+  database:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    restart: unless-stopped
+volumes:
+  db_data:

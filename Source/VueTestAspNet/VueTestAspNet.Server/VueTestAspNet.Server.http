@@ -1,0 +1,6 @@
+@VueTestAspNet.Server_HostAddress = http://localhost:5204
+
+GET {{VueTestAspNet.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

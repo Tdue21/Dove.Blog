@@ -1,0 +1,17 @@
+```yaml
+services:
+  razorapp:
+    build:
+      context: ./RazorApp
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    restart: unless-stopped
+    init: true
+    # env_file: ./RazorApp/.env  # Uncomment if .env file exists
+networks:
+  default:
+    name: dove_blog_network
+    driver: bridge
+```

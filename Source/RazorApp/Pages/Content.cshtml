@@ -1,9 +1,9 @@
-﻿@page "{pageName}"
+@page "{pageName}"
 
 @model ContentModel
-@{
-}
+@{}
 
-<h1>@Model.PageName</h1>
-
-<div>@Html.Raw(Model.PageContent);</div>
+<div class="content">
+    <h1>@Model.PageName</h1>
+    <div>@Html.Raw(Model.PageContent)</div>
+</div>

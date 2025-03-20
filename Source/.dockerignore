@@ -1,0 +1,46 @@
+# Ignore IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Ignore build outputs
+bin/
+obj/
+
+# Ignore test and debug files
+test/
+tests/
+*.log
+
+# Ignore version control files
+.git/
+.gitignore
+
+# Ignore environment and secret files
+.env*
+*.pem
+*.key
+*.crt
+
+# Ignore temporary and local files
+tmp/
+temp/
+*.tmp
+.local/
+
+# Ignore Docker-related files
+Dockerfile*
+docker-compose*
+
+# Ignore documentation
+*.md
+README*
+
+# Ignore project-specific patterns
+config.local.*
+*.local.yml
+
+# Ensure necessary files are included
+!src/
+!RazorApp/

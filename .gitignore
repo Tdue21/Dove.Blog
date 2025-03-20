@@ -361,5 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-Data/*
-Source/RazorApp/wwwroot/data/*
+
+
+Data/
+Source/RazorApp/wwwroot/data/
