@@ -1,12 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Dove.Blog.WebApp.Pages
+namespace Dove.Blog.WebApp.Pages;
+
+public class BlogModel : PageModel
 {
-    public class BlogModel : PageModel
+    public void OnGet()
     {
-        public void OnGet()
-        {
-        }
     }
 }

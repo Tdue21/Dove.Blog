@@ -1,22 +1,17 @@
 @page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = Model.Title;
 }
 
-<div class="text-left content">
-    <h1 class="display-4">Welcome</h1>
-    <p>You have arrived at the personal homepage of Thomas Due.</p>
-    
-    <p>I am a software developer, gamer, roleplayer (TTRPG) and father. 
-    These are my personal pages, where I present myself, my thought, keep my projects etc.</p>
+<div class="content">
+    <div>@Html.Raw(Model.PageContent)</div>
 
-    <p>Not everything here will be for everyone, and that is fine.</p>
 
-    <p>This site itself is built from scratch, partly because it is a learning
-        experience for me. But, also as a show-case of me and my skills.
+    <div style="font-size: 0.8em; color:darkgrey">
+        <span>@Model.Created</span>
+        <span>@Model.Updated</span>
+        <span>@Model.Author</span>
+    </div>
 
-        Since my experience as a software developer is pretty broad after almost 40 
-        years (as of this writing), the skills show-cased here, will 
-    </p>
 </div>

@@ -1,8 +1,9 @@
-using Microsoft.Extensions.Options;
-using Microsoft.Extensions.DependencyInjection;
 using Westwind.AspNetCore.Markdown;
 using Markdig;
 using Markdig.Extensions.AutoIdentifiers;
+using Dove.Blog.Abstractions;
+using Dove.Blog.Data;
+using Dove.Blog.Logic;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,9 @@ builder.Services.AddRazorPages(options =>
     {
         options.Conventions.AddPageRoute("/Pages", "Pages/Content/{pageName}");
     });
+
+builder.Services.AddTransient<IDataProvider, FileDataProvider>();
+builder.Services.AddTransient<PageDataProvider>();
 
 builder.Services.AddMarkdown(config =>
 {

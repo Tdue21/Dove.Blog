@@ -1,21 +1,19 @@
+using Dove.Blog.Abstractions;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Westwind.AspNetCore.Markdown;
 
 namespace Dove.Blog.WebApp.Pages;
 
-public class AboutModel(IMarkdownParserFactory parserFactory) : PageModel
+public class AboutModel(IDataProvider dataProvider, ILogger<AboutModel> logger) : PageModel
 {
-    private readonly IMarkdownParserFactory _parserFactory = parserFactory ?? throw new ArgumentNullException(nameof(parserFactory));
+    private readonly IDataProvider _dataProvider = dataProvider ?? throw new ArgumentNullException(nameof(dataProvider));
+    private readonly ILogger<AboutModel> _logger = logger ?? throw new ArgumentNullException(nameof(logger));
 
     public string? PageContent { get; private set; }
 
     public async Task OnGet()
     {
-        var parser = _parserFactory.GetParser();
-        var data = parser.Parse("## Test\nBlabla\n\n**Test**");
-
-
-        PageContent = await Markdown.ParseFromFileAsync($"~/data/Pages/About.md", sanitizeHtml: true);
+        
+        //PageContent = await _dataProvider.GetMarkdown("About"); 
     }
 }
 

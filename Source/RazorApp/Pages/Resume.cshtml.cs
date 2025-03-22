@@ -1,15 +1,17 @@
+using Dove.Blog.Abstractions;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Westwind.AspNetCore.Markdown;
 
-namespace Dove.Blog.WebApp.Pages
+namespace Dove.Blog.WebApp.Pages;
+
+public class ResumeModel(IDataProvider dataProvider, ILogger<ResumeModel> logger) : PageModel
 {
-    public class ResumeModel : PageModel
+    private readonly IDataProvider _dataProvider = dataProvider ?? throw new ArgumentNullException(nameof(dataProvider));
+    private readonly ILogger<ResumeModel> _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+
+    public string? PageContent { get; private set; }
+
+    public async Task OnGet()
     {
-        public string? PageContent { get; private set; }
-     
-        public async Task OnGet()
-        {
-            PageContent = await Markdown.ParseFromFileAsync($"~/data/Pages/Resume.md", sanitizeHtml: true);            
-        }
+       // PageContent = await _dataProvider.GetMarkdown("Resume");
     }
 }
