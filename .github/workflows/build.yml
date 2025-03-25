@@ -41,5 +41,6 @@ jobs:
       with:
         name: dotnet-test
         artifact: dotnet-results
+        path: '*.trx'
         reporter: dotnet-trx
 
