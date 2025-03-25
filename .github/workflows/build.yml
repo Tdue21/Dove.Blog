@@ -25,4 +25,22 @@ jobs:
     - name: Build
       run: dotnet build Source/Dove.Blog.slnx --no-restore
     - name: Test
-      run: dotnet test Source/Dove.Blog.slnx --no-build --verbosity normal --results-directory Tests
+      run: dotnet test Source/Dove.Blog.slnx --no-build --verbosity normal
+    - name: Upload test results
+      uses: actions/upload-artifact@v2
+      if: success() || failure()
+      with:
+        name: test-results
+        path: test-results.xml
+
+  report:
+      runs-on: ubuntu-latest
+      steps:
+      - name: Download test results
+        uses: actions/download-artifact@v2
+        with:
+          name: test-results
+      - name: Publish test results
+        uses: dorny/test-reporter@v2
+        with:
+          sarif_file: test-results.xml
