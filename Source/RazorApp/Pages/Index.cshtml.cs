@@ -21,5 +21,6 @@ public class IndexModel(PageDataProvider dataProvider, ILogger<IndexModel> logge
         Created = page.Created;
         Updated = page.Updated;
         Author = page.Author;
+        Title = page.Title;
     }
 }

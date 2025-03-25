@@ -19,7 +19,7 @@ public class PageDataProvider(IDataProvider provider)
         Page? pageObject = null;
 
         var markdown = await _provider.ReadPageContent($"Pages/{pageName}");
-        var pipeline = new MarkdownPipelineBuilder().UseYamlFrontMatter().Build();
+        var pipeline = new MarkdownPipelineBuilder().UseYamlFrontMatter().UseEmojiAndSmiley().Build();
         var document = Markdown.Parse(markdown, pipeline);
 
         var yamlBlock = document.Descendants<YamlFrontMatterBlock>().FirstOrDefault();

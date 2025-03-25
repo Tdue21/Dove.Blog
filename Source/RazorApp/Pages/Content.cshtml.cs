@@ -1,26 +1,27 @@
-using Dove.Blog.Abstractions;
-using Microsoft.AspNetCore.Mvc;
+using Dove.Blog.Logic;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Westwind.AspNetCore.Markdown;
 
 namespace Dove.Blog.WebApp.Pages;
 
-public class ContentModel : PageModel
+public class ContentModel(PageDataProvider dataProvider, ILogger<ContentModel> logger) : PageModel
 {
-    public string? PageName { get; set;}
+    private readonly PageDataProvider _dataProvider = dataProvider ?? throw new ArgumentNullException(nameof(dataProvider));
+    private readonly ILogger<ContentModel> _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+
     public string? PageContent { get; private set; }
+    public DateTimeOffset? Created { get; private set; }
+    public DateTimeOffset? Updated { get; private set; }
+    public string? Author { get; private set; }
+    public string? Title { get; private set; }
 
     public async Task OnGet()
     {
         var pageName = RouteData.Values["pageName"]?.ToString();
-
-        PageContent = await Markdown.ParseFromFileAsync($"~/data/Pages/{pageName}.md", sanitizeHtml: true);
-        
-        ViewData["Title"] = pageName;
-        PageName = pageName?.ToString();
-        Console.WriteLine(pageName);
-
-
-        
+        var page = await _dataProvider.GetPage(pageName);
+        PageContent = page.Content;
+        Created = page.Created;
+        Updated = page.Updated;
+        Author = page.Author;
+        Title = page.Title;
     }
 }

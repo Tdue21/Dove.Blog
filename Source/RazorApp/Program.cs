@@ -8,10 +8,11 @@ using Dove.Blog.Logic;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages(options =>
-    {
-        options.Conventions.AddPageRoute("/Pages", "Pages/Content/{pageName}");
-    });
+builder.Services.AddRazorPages()
+                .AddRazorPagesOptions(options =>
+                {
+                    options.Conventions.AddPageRoute("/",  "Content/Index");
+                });
 
 builder.Services.AddTransient<IDataProvider, FileDataProvider>();
 builder.Services.AddTransient<PageDataProvider>();
