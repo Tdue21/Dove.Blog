@@ -39,5 +39,6 @@ jobs:
     - name: Publish test results
       uses: dorny/test-reporter@v2
       with:
-        sarif_file: test-results.xml
+        artifact: dotnet-results
+        reporter: dotnet-trx
 
