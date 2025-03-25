@@ -11,8 +11,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages()
                 .AddRazorPagesOptions(options =>
                 {
-                    options.Conventions.AddPageRoute("/",  "Content/Index");
-                });
+                    //options.Conventions.AddPageRoute("/About",  "Content/About");
+                })
+                ;
 
 builder.Services.AddTransient<IDataProvider, FileDataProvider>();
 builder.Services.AddTransient<PageDataProvider>();
