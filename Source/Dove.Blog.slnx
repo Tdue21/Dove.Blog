@@ -1,4 +1,8 @@
 <Solution>
+  <Folder Name="/.Solution Files/" Id="02ea681e-c7d8-13c7-8484-4ac65e1b71e8">
+    <File Path="../LICENSE.txt" />
+    <File Path="../README.md" />
+  </Folder>
   <Project Path="Dove.Blog.Abstractions/Dove.Blog.Abstractions.csproj" />
   <Project Path="Dove.Blog.Data/Dove.Blog.Data.csproj" />
   <Project Path="Dove.Blog.Logic/Dove.Blog.Logic.csproj" />
