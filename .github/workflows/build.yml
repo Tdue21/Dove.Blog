@@ -25,4 +25,4 @@ jobs:
     - name: Build
       run: dotnet build Source/Dove.Blog.slnx --no-restore
     - name: Test
-      run: dotnet test Source/Dove.Blog.slnx --no-build --verbosity normal
+      run: dotnet test Source/Dove.Blog.slnx --no-build --verbosity normal --results-directory Tests
