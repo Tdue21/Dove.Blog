@@ -39,6 +39,7 @@ jobs:
     - name: Publish test results
       uses: dorny/test-reporter@v2
       with:
+        name: dotnet-test
         artifact: dotnet-results
         reporter: dotnet-trx
 
