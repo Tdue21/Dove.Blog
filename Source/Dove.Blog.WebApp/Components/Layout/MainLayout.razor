@@ -1,0 +1,37 @@
+@inherits LayoutComponentBase
+
+<div class="page">
+    <main>
+        <div class="top-row px-4">
+            
+            <NavLink class="navbar-brand" Match="NavLinkMatch.All" href="/">
+                <img src="favicon.png" alt="Logo" class="logo" />
+            </NavLink>
+            <NavLink class="navbar-brand" Match="NavLinkMatch.All" href="/Blog">Blog</NavLink>
+            <NavLink class="navbar-brand" Match="NavLinkMatch.Prefix" href="/Content/Projects">Projects</NavLink>
+            <NavLink class="navbar-brand" Match="NavLinkMatch.Prefix" href="/Content/Resume">Resume</NavLink>
+            <NavLink class="navbar-brand" Match="NavLinkMatch.Prefix" href="/Content/About">About</NavLink>
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+
+    <footer>
+
+        <div class="fixed-bottom text-muted bottom-row">
+            <div class="container text-muted" style="text-align: center">
+                <span>&copy; Copyright 2024, <a href="/Content/About">Thomas Due</a></span>
+                <span>Powered by <a href="https://dot.net" target="_blank">.NET</a> @Environment.Version</span>
+            </div>
+        </div>
+
+    </footer>
+</div>
+
+<div id="blazor-error-ui" data-nosnippet>
+    An unhandled error has occurred.
+    <a href="." class="reload">Reload</a>
+    <span class="dismiss">🗙</span>
+</div>

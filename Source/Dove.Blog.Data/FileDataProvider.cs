@@ -23,9 +23,25 @@ public class FileDataProvider(IHostingEnvironment environment) : IDataProvider
         }
     }
 
+    public Task<string[]> GetFileList(string path, bool withExtension = false)
+    {
+        var folderPath = Path.Combine(RootPath, path);
+        if (Directory.Exists(folderPath))
+        {
+            var files = Directory.GetFiles(folderPath, "*.md", SearchOption.TopDirectoryOnly);
+            return Task.FromResult(files.Select(x => withExtension ? Path.GetFileName(x) : Path.GetFileNameWithoutExtension(x)).ToArray());
+        }
+        return Task.FromResult(Array.Empty<string>());
+    }
+
     public Task<string> ReadPageContent(string pageName, Encoding encoding = null!)
     {
         var filePath = Path.Combine(RootPath, pageName + ".md");
+        if(!File.Exists(filePath))
+        {
+            throw new FileNotFoundException($"No page named '{pageName}' was found.");
+        }
+
         var content = File.ReadAllTextAsync(filePath, encoding ?? Encoding.UTF8);
         return content;
     }

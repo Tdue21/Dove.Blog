@@ -1,0 +1,18 @@
+@inherits HomeComponentBase
+@page "/"
+@using Dove.Blog.WebApp.Components.Layout
+
+<PageTitle>@Title</PageTitle>
+
+@if (PageContent != null)
+{
+    <div>
+        @PageContent
+    </div>
+
+    <PageData Data="@PageData" />
+}
+else
+{
+    <p>Loading...</p>
+}

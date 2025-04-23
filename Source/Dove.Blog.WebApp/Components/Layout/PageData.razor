@@ -1,0 +1,11 @@
+@inherits PageDataComponent
+
+@using Dove.Blog.WebApp.Models
+
+<div class="text-body-secondary mb-5" style="font-size: x-small; vertical-align: bottom">
+    <ul style="list-style: none">
+        <li><span>Created: <i>@Data?.Created</i></span></li>
+        <li><span>Last Updated: <i>@Data?.Updated</i></span></li>
+        <li><span>Author: <i>@Data?.Author</i></span></li>
+    </ul>
+</div>

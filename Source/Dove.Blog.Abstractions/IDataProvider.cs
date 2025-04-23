@@ -28,4 +28,12 @@ public interface IDataProvider
     /// <param name="encoding"></param>
     /// <returns></returns>
     Task WritePageContent(string pageName, string content, Encoding encoding = null!);
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="path"></param>
+    /// <param name="withExtension"></param>
+    /// <returns></returns>
+    Task<string[]> GetFileList(string path, bool withExtension = false);
 }

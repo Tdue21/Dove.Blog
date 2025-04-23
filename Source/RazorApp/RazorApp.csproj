@@ -7,6 +7,7 @@
         <UserSecretsId>70f0577f-2886-4c92-bf71-e50e100288c7</UserSecretsId>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
         <DockerfileRunArguments>-v c:\Development\Projects\Dove.Blog\Data:/app/wwwroot/data:ro</DockerfileRunArguments>
+        <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
     </PropertyGroup>
 
     <ItemGroup>

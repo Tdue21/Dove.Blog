@@ -4,8 +4,13 @@ using Markdig.Extensions.AutoIdentifiers;
 using Dove.Blog.Abstractions;
 using Dove.Blog.Data;
 using Dove.Blog.Logic;
+using Microsoft.Extensions.Caching.Memory;
+using Dove.Blog.WebApp.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Bind configuration section to MySettings and register it as a singleton service
+builder.Services.Configure<CacheSettings>(builder.Configuration.GetSection(CacheSettings.SectionName));
 
 // Add services to the container.
 builder.Services.AddRazorPages()
@@ -17,6 +22,12 @@ builder.Services.AddRazorPages()
 
 builder.Services.AddTransient<IDataProvider, FileDataProvider>();
 builder.Services.AddTransient<PageDataProvider>();
+
+builder.Services.AddMemoryCache(options =>
+{
+    var cacheSettings = builder.Configuration.GetSection(CacheSettings.SectionName).Get<CacheSettings>() ?? CacheSettings.Default;
+    options.ExpirationScanFrequency = cacheSettings.ExpirationScanFrequency;
+});
 
 builder.Services.AddMarkdown(config =>
 {

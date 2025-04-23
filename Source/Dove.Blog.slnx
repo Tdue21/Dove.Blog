@@ -7,5 +7,6 @@
   <Project Path="Dove.Blog.Data/Dove.Blog.Data.csproj" />
   <Project Path="Dove.Blog.Logic/Dove.Blog.Logic.csproj" />
   <Project Path="Dove.Blog.Tests/Dove.Blog.Tests.csproj" Id="01a5c447-5567-4f52-9ba6-3da4908ae3d3" />
-  <Project Path="RazorApp/Dove.Blog.WebApp.csproj" />
+  <Project Path="Dove.Blog.WebApp/Dove.Blog.WebApp.csproj" />
+  <Project Path="RazorApp/RazorApp.csproj" Id="e1b9081c-ab4e-1179-9faa-1688b5d6edc4" />
 </Solution>
