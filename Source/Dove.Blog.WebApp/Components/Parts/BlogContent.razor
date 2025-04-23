@@ -1,0 +1,20 @@
+@inherits BlogContentBase
+
+<h1>@CurrentPost?.Title</h1>
+<div>
+    @PageContent
+</div>
+
+<hr />
+
+<div>
+    <p>
+        <span>Posted in @GetCategories()</span>
+        <span>on @CurrentPost?.Posted.ToString("g")</span>
+        <span>by @CurrentPost?.Author</span>
+    </p>
+    <p><span>Tags: </span>@GetTags()</p>
+</div>
+
+<hr />
+

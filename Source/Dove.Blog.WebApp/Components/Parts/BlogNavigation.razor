@@ -1,0 +1,23 @@
+@inherits BlogNavigationBase
+
+<div class="d-flex justify-content-between">
+    @if (PreviousSlug != null)
+    {
+        <a href="/Blog/@PreviousSlug">&lt;&lt; Previous</a>
+    }
+    else
+    {
+        <span class="text-secondary">&lt;&lt; Previous</span>
+    }
+
+    <a href="/Blog">Back to Blog</a>
+
+    @if (NextSlug != null)
+    {
+        <a href="/Blog/@NextSlug">Next &gt;&gt;</a>
+    }
+    else
+    {
+        <span class="text-secondary">Next &gt;&gt;</span>
+    }
+</div>

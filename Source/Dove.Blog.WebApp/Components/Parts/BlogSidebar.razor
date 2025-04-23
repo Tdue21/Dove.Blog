@@ -1,0 +1,27 @@
+@inherits BlogSidebarBase
+
+<h4>Categories</h4>
+<ul>
+    @foreach (var category in Categories.Take(8))
+    {
+        <li>
+            <a href="/Blog/Categories/@category.Category">@category.Category (@category.Posts)</a>
+        </li>
+    }
+    <li>
+        <a href="/Blog/Categories/">More...</a>
+    </li>
+</ul>
+
+<h4>Frequently Used Tags</h4>
+<ul>
+    @foreach (var tag in Tags.Take(8))
+    {
+        <li>
+            <a href="/Blog/Tags/@tag">@tag</a>
+        </li>
+    }
+    <li>
+        <a href="/Blog/Tags">More...</a>
+    </li>
+</ul>

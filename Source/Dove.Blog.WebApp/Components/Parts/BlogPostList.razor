@@ -1,0 +1,18 @@
+@inherits BlogPostListBase
+
+<h2>Latest Blog Posts</h2>
+@foreach (var post in Posts.Take(10))
+{
+    <div class="card mb-3 shadow p-2">
+        <h3><a href="/Blog/@post.Slug">@post.Title</a></h3>
+        <p>@post.Summary</p>
+        <a href="/Blog/@post.Slug">Read more...</a>
+    </div>
+}
+
+@if (Posts.Count() > 10)
+{
+    <div class="load-more">
+        <a href="#">Load more posts...</a>
+    </div>
+}

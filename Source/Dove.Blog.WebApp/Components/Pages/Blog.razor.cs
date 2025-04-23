@@ -22,7 +22,7 @@ public class BlogPage : ComponentBase
     public MarkupString? PageContent { get; private set; }
     public Post? CurrentPost { get; set; }
 
-    public IEnumerable<string> Categories { get; private set; } = Enumerable.Empty<string>();
+    public IEnumerable<(string Category, int Posts)> Categories { get; private set; } = Enumerable.Empty<(string Category, int Posts)>();
     public IEnumerable<string> Tags { get; private set; } = Enumerable.Empty<string>();
     public IEnumerable<PostSummary> Posts { get; private set; } = null!;
 
@@ -31,7 +31,7 @@ public class BlogPage : ComponentBase
         IsLoading = true;
         try
         {
-            Categories = (await BlogProvider.GetCategories()).Select(x => x.category);
+            Categories = (await BlogProvider.GetCategories());
             Tags = await BlogProvider.GetTags();
 
             await LoadPageData();
