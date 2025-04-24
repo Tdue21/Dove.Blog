@@ -27,11 +27,11 @@ jobs:
       with:
         dotnet-version: 9.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore Source/
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build Source/ --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal --logger:"xunit;LogFilePath=test-results.xml"
+      run: dotnet test Source/ --no-build --verbosity normal --logger:"xunit;LogFilePath=test-results.xml"
     - name: Print Directory
       run: |
         pwd
@@ -42,5 +42,5 @@ jobs:
       if: always()
       with:
         files: |
-          ./Dove.Blog.Tests/test-results.xml
+          ./Source/Dove.Blog.Tests/test-results.xml
 
