@@ -26,7 +26,7 @@ public class CategoryProviderTests
 
         categories.Should().NotBeNull();
         categories.Should().HaveCount(4);
-        categories.Should().BeEquivalentTo(["General", "Yahoo", "Recipes", "Test"]);
+        categories.Should().BeEquivalentTo([("General", 2), ("Yahoo", 1), ("Recipes", 1), ("Test", 1)]);
     }
 
     private const string FirstBlogPost = @"---
