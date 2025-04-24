@@ -27,11 +27,16 @@ jobs:
       with:
         dotnet-version: 9.0.x
     - name: Restore dependencies
-      run: dotnet restore  Source/Dove.Blog.slnx
+      run: dotnet restore
     - name: Build
-      run: dotnet build Source/Dove.Blog.slnx --no-restore
+      run: dotnet build --no-restore
     - name: Test
-      run: dotnet test Source/Dove.Blog.slnx --no-build --logger:"xunit;LogFilePath=test-results.xml"
+      run: dotnet test --no-build --verbosity normal --logger:"xunit;LogFilePath=test-results.xml"
+    - name: Print Directory
+      run: |
+        pwd
+        ls -la ./
+#        ls -la ./TrinityContinuumWeb.Tests/
     - name: Publish test results
       uses: EnricoMi/publish-unit-test-result-action@v2
       if: always()
