@@ -32,11 +32,6 @@ jobs:
       run: dotnet build Source/ --no-restore
     - name: Test
       run: dotnet test Source/ --no-build --verbosity normal --logger:"xunit;LogFilePath=test-results.xml"
-    - name: Print Directory
-      run: |
-        pwd
-        ls -la ./
-#        ls -la ./TrinityContinuumWeb.Tests/
     - name: Publish test results
       uses: EnricoMi/publish-unit-test-result-action@v2
       if: always()
