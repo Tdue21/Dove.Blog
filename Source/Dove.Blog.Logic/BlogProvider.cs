@@ -15,8 +15,9 @@ namespace Dove.Blog.Logic;
 public interface IBlogProvider
 {
     Task<IEnumerable<(string category, int posts)>> GetCategories();
-    Task<Post> GetPost(string? postTitle);
     Task<IEnumerable<string>> GetTags();
+    Task<Post> GetPost(string? postTitle);
+    Task<IEnumerable<PostSummary>> GetPosts(string? category = null, params string[] tags);
 }
 
 public class BlogProvider(IDataProvider dataProvider, IMemoryCache memoryCache, ILogger<BlogProvider> logger) : IBlogProvider
@@ -97,21 +98,21 @@ public class BlogProvider(IDataProvider dataProvider, IMemoryCache memoryCache, 
                 posts = posts.Where(p => p.Categories != null && p.Categories.Contains(category))
                              .ToList();
             }
+
             if (tags.Length > 0)
             {
-                posts = posts.Where(p => p.Tags != null && p.Tags.Intersect(tags).Any())
+                posts = posts.Where(p => p.Tags!.Any(t => tags.Contains(t)))
                              .ToList();
             }
 
-
-
             return posts.Select(p =>
             {
+                var brief = p.Content?.Length > 200 ? p.Content?.Substring(0, 200) : p.Content;
                 return new PostSummary
                 {
                     Slug = p.Slug,
                     Title = p.Title,
-                    Summary = p.Summary ?? _htmlRegex.Replace(p.Content?.Substring(0, 200) + " ...", string.Empty),
+                    Summary = p.Summary ?? _htmlRegex.Replace(brief + " ...", string.Empty),
                     Author = p.Author,
                     Posted = p.Posted,
                     Updated = p.Updated
@@ -188,10 +189,4 @@ public class BlogProvider(IDataProvider dataProvider, IMemoryCache memoryCache, 
 
         return finalized.ToLower();
     }
-
-    private static string RemoveHTMLTagsCompiled(string html)
-    {
-        return _htmlRegex.Replace(html, string.Empty);
-    }
-
 }
