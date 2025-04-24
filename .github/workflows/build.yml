@@ -9,6 +9,12 @@ on:
   pull_request:
     branches: [ "main" ]
 
+permissions:
+  contents: read
+  issues: read
+  checks: write
+  pull-requests: write
+
 jobs:
   build:
 
@@ -25,22 +31,11 @@ jobs:
     - name: Build
       run: dotnet build Source/Dove.Blog.slnx --no-restore
     - name: Test
-      run: dotnet test Source/Dove.Blog.slnx --no-build --logger trx --results-directory "TestResults"
-    - name: Upload test results
-      uses: actions/upload-artifact@v4
-      if: ${{ always() }}
-      with:
-        name: dotnet-results
-        path: TestResults
-    - name: Download test results
-      uses: actions/download-artifact@v4
-      with:
-        name: dotnet-results
+      run: dotnet test Source/Dove.Blog.slnx --no-build --logger:"xunit;LogFilePath=test-results.xml"
     - name: Publish test results
-      uses: dorny/test-reporter@v2
+      uses: EnricoMi/publish-unit-test-result-action@v2
+      if: always()
       with:
-        name: dotnet-test
-        artifact: dotnet-results
-        path: '*.trx'
-        reporter: dotnet-trx
+        files: |
+          ./Dove.Blog.Tests/test-results.xml
 
