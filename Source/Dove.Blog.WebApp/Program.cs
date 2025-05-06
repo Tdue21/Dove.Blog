@@ -10,12 +10,12 @@ using Serilog;
 
 Log.Logger = new LoggerConfiguration()
                     .WriteTo.Console()
+                    .WriteTo.File("Data/Logs/log.txt", Serilog.Events.LogEventLevel.Verbose, rollingInterval: RollingInterval.Day)
                     .CreateLogger();
 
 try
 {
     var builder = WebApplication.CreateBuilder(args);
-
     builder.Services.AddSerilog();
 
     // Bind configuration section to MySettings and register it as a singleton service

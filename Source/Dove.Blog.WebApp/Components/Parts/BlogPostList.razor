@@ -1,12 +1,29 @@
 @inherits BlogPostListBase
 
-<h2>Latest Blog Posts</h2>
+<h2>@ListTitle</h2>
+
 @foreach (var post in Posts.Take(10))
 {
-    <div class="card mb-3 shadow p-2">
-        <h3><a href="/Blog/@post.Slug">@post.Title</a></h3>
-        <p>@post.Summary</p>
-        <a href="/Blog/@post.Slug">Read more...</a>
+    <div class="card shadow mb-3">
+
+        <div class="row g-0">
+
+            <div class="col-2">
+                <div class="rounded-start bg-info-subtle p-3 h-100">
+                    <p><b>Posted on:</b><br /> @post.Posted.ToString("d")</p>
+                    <p><b>Posted by:</b><br /> @post.Author</p>
+                    <p><b>Categories:</b><br /> @(string.Join(", ", post.Categories))</p>
+                </div>
+            </div>
+
+            <div class="col-10 p-2">
+                <h3 class="card-title"><a href="/Blog/@post.Slug">@post.Title</a></h3>
+                <div class="card-body">
+                    <p>@post.Summary</p>
+                    <p><a href="/Blog/@post.Slug">Read more...</a></p>
+                </div>
+            </div>
+        </div>
     </div>
 }
 

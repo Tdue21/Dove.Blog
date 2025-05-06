@@ -99,9 +99,9 @@ public class BlogProvider(IDataProvider dataProvider, IMemoryCache memoryCache, 
                              .ToList();
             }
 
-            if (tags.Length > 0)
+            if (tags.Where(x => !string.IsNullOrEmpty(x)).Any())
             {
-                posts = posts.Where(p => p.Tags!.Any(t => tags.Contains(t)))
+                posts = posts.Where(p => p.Tags?.Any(t => tags.Contains(t)) ?? false)
                              .ToList();
             }
 
@@ -115,7 +115,8 @@ public class BlogProvider(IDataProvider dataProvider, IMemoryCache memoryCache, 
                     Summary = p.Summary ?? _htmlRegex.Replace(brief + " ...", string.Empty),
                     Author = p.Author,
                     Posted = p.Posted,
-                    Updated = p.Updated
+                    Updated = p.Updated,
+                    Categories = p.Categories
                 };
             });
 
