@@ -7,6 +7,7 @@ using Dove.Blog.Logic;
 using Dove.Blog.WebApp.Components;
 using Dove.Blog.WebApp.Models;
 using Serilog;
+using System.IO.Abstractions;
 
 Log.Logger = new LoggerConfiguration()
                     .WriteTo.Console()
@@ -25,6 +26,7 @@ try
     builder.Services.AddRazorComponents()
         .AddInteractiveServerComponents();
 
+    builder.Services.AddTransient<IFileSystem, FileSystem>();
     builder.Services.AddTransient<IDataProvider, FileDataProvider>();
     builder.Services.AddTransient<PageDataProvider>();
     builder.Services.AddTransient<BlogProvider>();
